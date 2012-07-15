@@ -1,0 +1,73 @@
+<!doctype html >
+<head>
+  <title>a post</title>
+  <style type="text/css">
+
+/* structure */
+.properties > *:before { content: attr(class) " : " }
+.links > a:before { content: "<a rel=\"" attr(rel) "\" name=\"" attr(name) "\" title=\"" attr(title) "\" type=\"" attr(type) "\" >" }
+.controls > form:before { content: attr(name); font-size: 1.3em; font-weight: bold; } 
+.embedded > *:before { content: attr(class); font-size: 1.3em; font-weight: bold; } 
+
+/* styling */
+body * { margin: 0.7em 0 0.7em 1.4em; }
+body, .embedded > *, .controls > * { padding: 1em; border: 2px solid #999; }
+
+.properties > *, .links > * { font-family: monospace; }
+.links a { text-decoration: none; }
+
+.properties:before { content: "Properties"; font-size: 1.3em;  }
+.links:before { content: "Links"; font-size: 1.3em;  }
+.controls:before { content: "Controls"; font-size: 1.3em; }
+.embedded:before { content: "Embedded Resources"; font-size: 1.3em; }
+
+.links > a { display: block; }
+.controls > form input { display: block; }
+  </style>
+
+  <script src="http://ft.dev/assets/jquery.js?body=1"></script>
+  <script src="hal.js"></script>
+  <script src="jquery.curie.js"></script>
+  <script src="jquery.xmlns.js"></script>
+  <script src="jquery.uri.js"></script>
+</head>
+
+<body xmlns:ht="http://haltalk.herokuapp.com/rels/">
+  <div class="properties">
+    <div class="content">bla</div>
+    <div class="created_at">2012</div>
+  </div>
+  <div class="links">
+    <a rel="self" href="/posts/4ff82f2418126e7e38000008"></a>
+    <a rel="ht:author" href="/users/mike" title="Bob"></a>
+  </div>
+  <div class="controls">
+    <form name="ht:make-reply" action="/posts/4ff82f2418126e7e38000008/reply" method="POST">
+      <input name="content" />
+      <input name="misc" />
+      <input type="submit" />
+    </form>
+  </div>
+  <div class="embedded">
+    <div class="ht:reply">
+      <div class="links">
+        <a rel="self" href="/tweet/123"></a>
+        <a rel="author" href="/users/bob" title="Bob"></a>
+      </div>
+      <div class="properties">
+        <div class="content">ddddd</div>
+        <div class="created_at">2013</div>
+      </div>
+    </div>
+    <div class="ht:reply">
+      <div class="links">
+        <a rel="self" href="/tweet/123"></a>
+        <a rel="author" href="/users/bob" title="Bob"></a>
+      </div>
+      <div class="properties">
+        <div class="content">ddddd</div>
+        <div class="created_at">2013</div>
+      </div>
+    </div>
+  </div>
+</body>
