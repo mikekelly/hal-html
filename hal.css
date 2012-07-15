@@ -1,0 +1,20 @@
+/* structure */
+.properties > *:before { content: attr(class) " : " }
+.links > a:before { content: "<a rel=\"" attr(rel) "\" name=\"" attr(name) "\" title=\"" attr(title) "\" type=\"" attr(type) "\" >" }
+.controls > form:before { content: attr(name); font-size: 1.3em; font-weight: bold; } 
+.embedded > *:before { content: attr(class); font-size: 1.3em; font-weight: bold; } 
+
+/* styling */
+body * { margin: 0.7em 0 0.7em 1.4em; }
+body, .embedded > *, .controls > * { padding: 1em; border: 2px solid #999; }
+
+.properties > *, .links > * { font-family: monospace; }
+.links a { text-decoration: none; }
+
+.properties:before { content: "Properties"; font-size: 1.3em;  }
+.links:before { content: "Links"; font-size: 1.3em;  }
+.controls:before { content: "Controls"; font-size: 1.3em; }
+.embedded:before { content: "Embedded Resources"; font-size: 1.3em; }
+
+.links > a { display: block; }
+.controls > form input { display: block; }
