@@ -1,6 +1,6 @@
 <!doctype html>
 <head>
-  <title>a tweet</title>
+  <title>An example tweet</title>
   <link rel="stylesheet" href="hal.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -10,42 +10,40 @@
 
   <script src="hal.js"></script>
 </head>
-
 <body xmlns:ht="http://haltalk.herokuapp.com/rels/">
   <div class="properties">
-    <div class="content">bla</div>
-    <div class="created_at">2012</div>
+    <div class="content">Justin Bieber is grate!111</div>
+    <div class="created_at">2012-07-07T22:35:33+00:00</div>
   </div>
   <div class="links">
-    <a rel="self" href="/posts/4ff82f2418126e7e38000008"></a>
-    <a rel="ht:author" href="/users/mike" title="Bob"></a>
+    <a rel="self" href="/tweets/120"></a>
+    <a rel="ht:author" href="/users/derek" title="Derek"></a>
   </div>
   <div class="controls">
-    <form name="ht:make-reply" action="/posts/4ff82f2418126e7e38000008/reply" method="POST">
+    <form name="ht:make-reply" action="/tweets/120/replies" method="POST">
       <input name="content" />
-      <input name="misc" />
       <input type="submit" />
     </form>
   </div>
   <div class="embedded">
-    <div class="ht:reply">
+    <div class="ht:response">
       <div class="links">
         <a rel="self" href="/tweet/123"></a>
-        <a rel="author" href="/users/bob" title="Bob"></a>
+        <a rel="ht:author" href="/users/bob" title="Bob"></a>
       </div>
       <div class="properties">
-        <div class="content">ddddd</div>
-        <div class="created_at">2013</div>
+        <div class="content">No he isn't omgomgomg1!11</div>
+        <div class="created_at">2012-07-07T22:37:33+00:00</div>
       </div>
     </div>
-    <div class="ht:reply">
+    <div class="ht:response">
       <div class="links">
-        <a rel="self" href="/tweet/123"></a>
-        <a rel="author" href="/users/bob" title="Bob"></a>
+        <a rel="self" href="/tweet/135"></a>
+        <a rel="ht:author" href="/users/ted" title="Ted"></a>
       </div>
       <div class="properties">
-        <div class="content">ddddd</div>
-        <div class="created_at">2013</div>
+        <div class="content">Totes agree with you lolol!11!</div>
+        <div class="created_at">2012-07-07T22:38:33+00:00</div>
       </div>
     </div>
   </div>
