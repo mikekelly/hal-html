@@ -1,20 +1,28 @@
 /* structure */
-.properties > *:before { content: attr(class) " : " }
 .links > a:before { content: "<a rel=\"" attr(rel) "\" name=\"" attr(name) "\" title=\"" attr(title) "\" type=\"" attr(type) "\" >" }
 .controls > form:before { content: attr(name); font-size: 1.3em; font-weight: bold; } 
 .embedded > *:before { content: attr(class); font-size: 1.3em; font-weight: bold; } 
 
 /* styling */
 body * { margin: 0.7em 0 0.7em 1.4em; }
-body, .embedded > *, .controls > * { padding: 1em; border: 2px solid #999; }
+body input { max-width: 400px; width: 100% }
+body label { display: block; }
 
-.properties > *, .links > * { font-family: monospace; }
+body, .embedded > * { padding: 1em; border: 2px solid #999; }
+
+.links:before { content: "Links"; font-size: 1.3em;  }
+.links > * { font-family: monospace; }
+.links > a { display: block; }
+.links .doc { font-weight: bold; }
 .links a { text-decoration: none; }
 
 .properties:before { content: "Properties"; font-size: 1.3em;  }
-.links:before { content: "Links"; font-size: 1.3em;  }
-.controls:before { content: "Controls"; font-size: 1.3em; }
-.embedded:before { content: "Embedded Resources"; font-size: 1.3em; }
+.properties > input { display: block; }
 
-.links > a { display: block; }
+.controls:before { content: "Controls"; font-size: 1.3em; }
 .controls > form input { display: block; }
+.controls > * { padding: 1em; border: 2px solid green; }
+.controls  p.name { font-size: 1.3em; font-weight: bold; margin-left: 0; }
+
+.embedded:before { content: "Embedded Resources"; font-size: 1.3em; }
+.embedded > * > p.name { font-size: 1.3em; font-weight: bold; margin-left: 0; }

@@ -3,7 +3,7 @@
   <title>An example tweet</title>
   <link rel="stylesheet" href="hal.css" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="vendor/jquery.js"></script>
   <script src="vendor/jquery.curie.js"></script>
   <script src="vendor/jquery.xmlns.js"></script>
   <script src="vendor/jquery.uri.js"></script>
@@ -11,10 +11,12 @@
   <script src="hal.js"></script>
 </head>
 <body xmlns:ht="http://haltalk.herokuapp.com/rels/">
-  <div class="properties">
-    <div class="content">Justin Bieber is grate!111</div>
-    <div class="created_at">2012-07-07T22:35:33+00:00</div>
-  </div>
+  <form class="properties" action="" method="POST">
+    <input type="hidden" name="_method" value="PUT" />
+    <input name="content" value="Justin Bieber is grate!111" />
+    <input name="created_at" value="2012-07-07T22:35:33+00:00" />
+    <button>Update</button>
+  </form>
   <div class="links">
     <a rel="self" href="/tweets/120"></a>
     <a rel="ht:author" href="/users/derek" title="Derek"></a>
@@ -22,7 +24,7 @@
   <div class="controls">
     <form name="ht:make-reply" action="/tweets/120/replies" method="POST">
       <input name="content" />
-      <input type="submit" />
+      <button>submit</button>
     </form>
   </div>
   <div class="embedded">
@@ -31,20 +33,24 @@
         <a rel="self" href="/tweet/123"></a>
         <a rel="ht:author" href="/users/bob" title="Bob"></a>
       </div>
-      <div class="properties">
-        <div class="content">No he isn't omgomgomg1!11</div>
-        <div class="created_at">2012-07-07T22:37:33+00:00</div>
-      </div>
+      <form class="properties" action="/tweet/123" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <input name="content" value="No he isn't omgomgomg1!11" />
+        <input name="created_at" value="2012-07-07T22:37:33+00:00" />
+        <button>Update</button>
+      </form>
     </div>
     <div class="ht:response">
       <div class="links">
         <a rel="self" href="/tweet/135"></a>
         <a rel="ht:author" href="/users/ted" title="Ted"></a>
       </div>
-      <div class="properties">
-        <div class="content">Totes agree with you lolol!11!</div>
-        <div class="created_at">2012-07-07T22:38:33+00:00</div>
-      </div>
+      <form class="properties" action="/tweet/135" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <input name="content" value="Totes agree with you lolol!11!" />
+        <input name="created_at" value="2012-07-07T22:38:33+00:00" />
+        <button>Update</button>
+      </form>
     </div>
   </div>
 </body>
